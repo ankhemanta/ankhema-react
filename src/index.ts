@@ -1,9 +1,3 @@
-import { 
-  Input 
-  
-} from './components'
+import MyCounter from './components/app'
 
-export { 
-  Input 
-  
-};
+export { MyCounter }
