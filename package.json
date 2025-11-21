@@ -1,24 +1,69 @@
 {
-  "name": "ankhema-react",
-  "version": "1.0.0",
-  "description": "react components",
-  "keywords": [
-    "react",
-    "ankhema-react"
-  ],
-  "homepage": "https://github.com/ankhemanta/ankhema-react#readme",
-  "bugs": {
-    "url": "https://github.com/ankhemanta/ankhema-react/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ankhemanta/ankhema-react.git"
-  },
-  "license": "MIT",
-  "author": "Hemanta Ankura",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "name": "ankhema-react",
+    "version": "1.0.0",
+    "description": "React components",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/esm/index.d.ts",
+    "scripts": {
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run test && npm run prettier && npm run lint",
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+        "test": "jest --config jestconfig.json",
+        "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+        "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "keywords": [
+        "react",
+        "ankhema-react"
+    ],
+    "author": "Hemanta Ankura",
+    "homepage": "https://github.com/ankhemanta/ankhema-react#readme",
+    "bugs": {
+        "url": "https://github.com/ankhemanta/ankhema-react/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ankhemanta/ankhema-react.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "^7.28.5",
+        "@babel/preset-env": "^7.28.5",
+        "@babel/preset-react": "^7.28.5",
+        "@rollup/plugin-babel": "^6.1.0",
+        "@rollup/plugin-commonjs": "^29.0.0",
+        "@rollup/plugin-image": "^3.0.3",
+        "@rollup/plugin-node-resolve": "^16.0.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@testing-library/react": "^16.3.0",
+        "@types/jest": "^30.0.0",
+        "@types/react": "^19.2.6",
+        "@typescript-eslint/eslint-plugin": "^8.47.0",
+        "@typescript-eslint/parser": "^8.47.0",
+        "eslint": "^9.39.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "i": "^0.3.7",
+        "jest": "^30.2.0",
+        "jest-canvas-mock": "^2.5.2",
+        "jest-environment-jsdom": "^30.2.0",
+        "npm": "^11.6.3",
+        "prettier": "^3.6.2",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "rollup": "^4.53.3",
+        "rollup-plugin-postcss": "^4.0.2",
+        "ts-jest": "^29.4.5",
+        "typescript": "^5.9.3"
+    }
 }
