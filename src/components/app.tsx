@@ -4,7 +4,7 @@ type props = {
   value?: number
 }
 
-const MyCounter = ({ value = 0 }: props) => {
+const Counter = ({ value = 0 }: props) => {
   const [counter, setCounter] = useState(value)
 
   const onMinus = () => {
@@ -23,4 +23,4 @@ const MyCounter = ({ value = 0 }: props) => {
   )
 }
 
-export default MyCounter
+export default Counter
