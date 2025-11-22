@@ -19,9 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/ankhemanta/ankhema-react.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+
   "peerDependencies": {
     "react": ">=16"
   },
