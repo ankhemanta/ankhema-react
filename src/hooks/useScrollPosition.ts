@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 
-
-
-
 // --- Throttling Utility Function ---
 /**
  * Limits the execution rate of a function.
@@ -10,7 +7,6 @@ import { useState, useEffect, useRef } from 'react'
  * @param limit - The minimum time in milliseconds between function calls.
  * @returns A throttled version of the function.
  */
-
 
 /*
 const throttle = (func: (...args: any[]) => void, limit: number) => {
@@ -28,15 +24,15 @@ const throttle = (func: (...args: any[]) => void, limit: number) => {
 */
 
 function throttle<T extends (...args: any[]) => void>(func: T, limit: number) {
-  let inThrottle = false;
+  let inThrottle = false
 
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
     }
-  };
+  }
 }
 
 // --- Custom Hook Definition ---
