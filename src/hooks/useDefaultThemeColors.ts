@@ -2,15 +2,11 @@
 Copyright (c) [2025] [ankhemanta]
 Filename: useDefaultThemeColors.ts
 */
-import { useContext } from 'react';
-import AnkThemeContext from '../contexts/AnkThemeContext';
-import { light, dark } from '../constants/colors';
+import { useContext } from 'react'
+import AnkThemeContext from '../contexts/AnkThemeContext'
+import { light, dark } from '../constants/colors'
 
-import {
-  ThemeModeTypo,
-  ThemeHookReturn
-} from '../types/themeTypes'
-
+import { ThemeModeTypo, ThemeHookReturn } from '../types/themeTypes'
 
 /**
  * Custom hook to get theme-dependent colors.
@@ -19,54 +15,51 @@ import {
  * @returns An object containing the resolved colors and the themeMode used.
  */
 const useDefaultThemeColors = (themeMode?: ThemeModeTypo): ThemeHookReturn => {
-
-  const context = useContext(AnkThemeContext);
-
+  const context = useContext(AnkThemeContext)
 
   // --- Context is unavailable (e.g., component is outside a ThemeProvider) ---
   if (context === undefined) {
-    if (themeMode === "dark") {
+    if (themeMode === 'dark') {
       return {
         ...dark,
-        themeMode: "dark"
-      };
+        themeMode: 'dark',
+      }
     } else {
       // Default to "light" if themeMode is "light", undefined, or anything else
       return {
         ...light,
-        themeMode: "light"
-      };
+        themeMode: 'light',
+      }
     }
-  };
+  }
 
   // --- Context is available, use the theme from the context ---
-  if (context.theme === "light") {
+  if (context.theme === 'light') {
     return {
       ...light,
-      themeMode: "light"
-    };
-  } else if (context.theme === "dark") {
+      themeMode: 'light',
+    }
+  } else if (context.theme === 'dark') {
     return {
       ...dark,
-      themeMode: "dark"
-    };
-  } else if (context.theme === "system") {
-    // NOTE: Your original logic returns dark colors for "system". 
+      themeMode: 'dark',
+    }
+  } else if (context.theme === 'system') {
+    // NOTE: Your original logic returns dark colors for "system".
     // This is fine, but in a real app, you might check a system preference like window.matchMedia.
     return {
       ...dark,
-      themeMode: "system"
-    };
-  };
+      themeMode: 'system',
+    }
+  }
 
   // Fallback for exhaustive checking, though should be covered by ThemeMode union type
   return {
     ...light,
-    themeMode: "light"
-  };
-
+    themeMode: 'light',
+  }
 }
-export default useDefaultThemeColors;
+export default useDefaultThemeColors
 
 /*
   if (context === undefined) {

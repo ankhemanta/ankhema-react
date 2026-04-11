@@ -1,6 +1,3 @@
-import AnkThemeContext from './AnkThemeContext';
+import AnkThemeContext from './AnkThemeContext'
 
-
-export {
-  AnkThemeContext
-};
+export { AnkThemeContext }

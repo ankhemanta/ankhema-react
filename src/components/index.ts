@@ -1,10 +1,4 @@
-import Input from './Input';
-import ThemeSwitchButton from './ThemeSwitchButton';
+import Input from './Input'
+import ThemeSwitchButton from './ThemeSwitchButton'
 
-
-
-export {
-  Input,
-  ThemeSwitchButton,
-  ThemeSwitchButton as ThemeButton
-};
+export { Input, ThemeSwitchButton, ThemeSwitchButton as ThemeButton }

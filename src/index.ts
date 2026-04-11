@@ -1,37 +1,32 @@
 /**
  * Copyright (c) [2025] [ankhemanta]
  *  Filename: index.ts // MAIN
-*/
-
-
-
+ */
 
 // ALL COMPONENTS EXPORT
 
-// PROVDER 
+// PROVDER
 
-
-export * from './components';
+export * from './components'
 /*
-* Input 
-*/
+ * Input
+ */
 
-// ALL THEM COMPONENTS 
-export * from './view';
+// ALL THEM COMPONENTS
+export * from './view'
 /*
 PageView
 */
 
 // ALL CONTEXT EXPORT
-export * from './contexts';
+export * from './contexts'
 /*
-* AnkThemeContext
-*/
+ * AnkThemeContext
+ */
 
 //ALL HOOKS EXPORT
-export * from './hooks';
+export * from './hooks'
 /*
-* useThemeColors
-* useLocalStroage
-*/
-
+ * useThemeColors
+ * useLocalStroage
+ */
