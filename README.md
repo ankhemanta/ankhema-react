@@ -123,7 +123,10 @@ ___
 ## 🪟 Components 
    1. [**ThemeSwitchButton**](./RCThemeSwitchButtom.md)
    
-   2. [**Input**](./RCInput.md)
+   2. [**PageView**](./RCPageView.md)
+   
+   3. [**Input**](./RCInput.md)
+   
 
 
 

@@ -9,7 +9,7 @@ interface ElementDimensions {
 // Define the return type for the hook: a tuple containing the ref and the dimensions object
 type UseElementDimensionsResult = [RefObject<HTMLElement>, ElementDimensions];
 
-function useElementDimensions(): UseElementDimensionsResult {
+export function useElementDimensions(): UseElementDimensionsResult {
   // Specify the type for useRef: It can hold an HTMLElement or null initially.
   //    We also cast it to the RefObject type for the return value consistency.
   const ref = useRef<HTMLElement | null>(null) as RefObject<HTMLElement>;

@@ -13,8 +13,6 @@ import { ProviderProps } from '../types/themeTypes'
 
 
 
-
-
 const AnkThemeProvider = (
   {
     children,
@@ -71,7 +69,7 @@ const AnkThemeProvider = (
         }}
       >
         {children}
-      </ColorsProvidedContext.Provider>
+      </ColorsProvidedContext.Provider>        
     </AnkThemeContext.Provider>
   );
 };

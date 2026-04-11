@@ -4,22 +4,34 @@
 */
 
 
+
+
 // ALL COMPONENTS EXPORT
+
+// PROVDER 
+
+
+export * from './components';
 /*
 * Input 
 */
-export * from './components';
+
+// ALL THEM COMPONENTS 
+export * from './view';
+/*
+PageView
+*/
 
 // ALL CONTEXT EXPORT
+export * from './contexts';
 /*
 * AnkThemeContext
 */
-export * from './contexts';
 
 //ALL HOOKS EXPORT
+export * from './hooks';
 /*
 * useThemeColors
 * useLocalStroage
 */
-export * from './hooks';
 

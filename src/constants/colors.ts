@@ -20,3 +20,6 @@ export const dark: ColorPalette = {
   backgroundColor: "#444",
   color: "#eee",
 };
+
+const colors = { light, dark }
+export default colors;

@@ -4,9 +4,11 @@ Filename: useThemeColors.ts
 */
 import { useContext } from 'react';
 import AnkThemeContext, {
-  ThemeContextType,
   ColorsProvidedContext
 } from '../contexts/AnkThemeContext';
+import { ThemeContextType } from '../types/themeTypes'
+
+
 import {
   light as defaultLight,
   dark as defaultDark
@@ -21,8 +23,19 @@ const defaultColorsObject = {
   light: defaultLight,
   dark: defaultDark
 };
-const useThemeColors = (): ThemeContextType => {
+
+const useThemeColors = (): ThemeContextType | undefined => {
   const context = useContext(AnkThemeContext);
+
+if(!context){
+  throw new Error(` * useThemeColors must be used within a AnkThemeProvider * \n like this - \n import { AnkThemeProvider } from 'ankhema-react/provider;
+    
+        <AnkThemeProvider>
+         <App />
+        </AnkThemeProvider>
+    `);
+};
+
   const { light, dark } = useContext(ColorsProvidedContext) ?? defaultColorsObject;
 
   const reLight = light ?? defaultLight;
@@ -35,6 +48,7 @@ const useThemeColors = (): ThemeContextType => {
          <App />
         </AnkThemeProvider>
     `);
+
   } else if (context?.theme === "light") {
     return {
       ...reLight,
@@ -50,6 +64,10 @@ const useThemeColors = (): ThemeContextType => {
       ...reDark,
       themeMode: "system"
     };
+  }
+  return {
+    ...reDark,
+    themeMode: "system"
   }
 };
 export default useThemeColors;

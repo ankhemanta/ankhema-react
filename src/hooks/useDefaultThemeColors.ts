@@ -136,18 +136,6 @@ interface ThemeHookReturn extends ThemeColors {
 const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
 
 
-const light: ThemeColors = {
-  primary: '#007bff',
-  secondary: '#6c757d',
-  background: '#ffffff',
-  text: '#212529',
-};
-const dark: ThemeColors = {
-  primary: '#00ccff',
-  secondary: '#adb5bd',
-  background: '#343a40',
-  text: '#f8f9fa',
-};
 
 // --- Custom Hook Implementation ---
 
