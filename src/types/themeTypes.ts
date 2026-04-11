@@ -3,12 +3,6 @@ import { ColorPalette } from './colorType';
 
 
 
-export type ColorPalette = {
-  primary: string;
-  secondary: string;
-  background: string;
-  text: string;
-};
 
 export interface ColorsObject {
   light?: any;
